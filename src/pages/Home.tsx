@@ -9,6 +9,7 @@ export function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   function handleAddTask(newTaskTitle: string) {
+    setTasks(...tasks, newTaskTitle)
     //TODO - add new task
   }
 
