@@ -1,3 +1,4 @@
+import { valueToNode } from '@babel/types';
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
@@ -22,8 +23,12 @@ export function Home() {
   }
 
   function handleRemoveTask(id: number) {
-    //TODO - remove task from state
-  }
+    setTasks(tasks.filter((task)=>{
+    if(task.id !== id){
+      return task;
+    }
+    }))}
+  
 
   return (
     <View style={styles.container}>
