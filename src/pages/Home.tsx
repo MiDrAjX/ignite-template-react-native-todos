@@ -19,15 +19,24 @@ export function Home() {
   }
 
   function handleToggleTaskDone(id: number) {
+    const toggle = tasks.filter((task)=>{
+      if(task.id === id){
+        task.done = !task.done
+      }
+      return task
+    }
+    )
+    setTasks(toggle)
     //TODO - toggle task done if exists
   }
 
   function handleRemoveTask(id: number) {
-    setTasks(tasks.filter((task)=>{
-    if(task.id !== id){
-      return task;
-    }
-    }))}
+    const newTasks = tasks.filter((task)=>{
+      if(task.id !== id){
+        return task;
+      }
+      })
+    setTasks(newTasks)}
   
 
   return (
